@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="main" template="/WEB-INF/views/layout/layout1.jsp">
+		<!-- <put-attribute name="logo" value="/WEB-INF/views/logo.jsp" /> -->
+		<put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+ 		<put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />
+ 		<put-attribute name="content" value="" /> 
+	</definition>
+	
+	
+	
+	<definition name="calendar" extends="main">
+ 		<put-attribute name="content" value="/WEB-INF/views/calendar/calendar.jsp" />
+	</definition>
+
+
+	<definition name="members" extends="main">
+		<put-attribute name="content" value="/WEB-INF/views/main/members.jsp" />
+	</definition>
+
+	<definition name="NomalMems" extends="main">
+		<put-attribute name="content" value="/WEB-INF/views/main/members.jsp" />
+	</definition>
+
+	<definition name="BanMems" extends="main">
+		<put-attribute name="content" value="/WEB-INF/views/main/members.jsp" />
+	</definition>
+
+	<definition name="Managers" extends="main">
+		<put-attribute name="content" value="/WEB-INF/views/main/members.jsp" />
+	</definition>
+	
+	
+	<!--  -->
+	
+	
+	<definition name="bbs"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+
+
+</tiles-definitions>
+

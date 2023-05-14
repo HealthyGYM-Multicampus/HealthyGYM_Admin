@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="Member">
+	
+	<select id="allMember" resultType="com.mul.Healthygym.dto.MemberDto">
+		select memberseq, nickname, email, authority, auth
+		from member
+		order by memberseq asc
+	</select>
+	<select id="NomalMems" resultType="com.mul.Healthygym.dto.MemberDto">
+		select memberseq, nickname, email, authority, auth
+		from member
+		where auth=2
+		order by memberseq asc
+	</select>
+	<select id="BanMems" resultType="com.mul.Healthygym.dto.MemberDto">
+		select memberseq, nickname, email, authority, auth
+		from member
+		where auth=3
+		order by memberseq asc
+	</select>
+	<select id="Managers" resultType="com.mul.Healthygym.dto.MemberDto">
+		select memberseq, nickname, email, authority, auth
+		from member
+		where auth=0
+		order by memberseq asc
+	</select>
+
+	<select id="idcheck" parameterType="java.lang.String" resultType="Integer">
+		select count(*)
+		from member
+		where email=#{email}
+	</select>
+
+	<insert id="addmember" parameterType="com.mul.Healthygym.dto.MemberDto">
+		insert into member(email, pwd, nickname, auth, profile, authority, provider)
+		values(#{email}, #{pwd}, #{nickname}, 0, "default.png", "ROLE_ADMIN", 1) <!-- 관리자 0 -->
+	</insert>
+
+	<select id="login" parameterType="com.mul.Healthygym.dto.MemberDto" resultType="com.mul.Healthygym.dto.MemberDto">
+		select memberseq, nickname, email
+		from member
+		where email=#{email} and pwd=#{pwd} and auth=0 <!-- 관리자 0 -->
+	</select>
+	
+	<update id="modifyName"  parameterType="com.mul.Healthygym.dto.MemberDto">
+		update member set nickname=#{nickname} where memberseq=#{memberseq}
+	</update>
+	
+	
+	<update id="modifyEmail"  parameterType="com.mul.Healthygym.dto.MemberDto">
+		update member set email=#{email} where memberseq=#{memberseq}
+	</update>
+	
+	<update id="modifyAuth"  parameterType="com.mul.Healthygym.dto.MemberDto">
+		update member set auth=#{auth} where memberseq=#{memberseq}
+	</update>
+	
+	
+	
+</mapper>
