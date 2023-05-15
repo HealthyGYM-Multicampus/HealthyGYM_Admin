@@ -16,9 +16,12 @@
 
 
 
-<div class="container" style="height: 100%;">
+<div class="container" style="width: 280px;">
+<a href="/" class="align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+<svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+</a>
 
-	  <div class="container">
+	  <div class="container">  
       <div class="row">
         <div class="col-12">
 
@@ -28,6 +31,7 @@
             <a href="BanMems.do" class="list-group-item list-group-item-action">활동정지회원</a>
             <a href="Managers.do" class="list-group-item list-group-item-action">관리자</a>
           </div>
+          
           
           <div class="list-group">
             <a href="bbs.do" class="list-group-item list-group-item-action  list-group-item-info">전체 게시글 조회</a>    

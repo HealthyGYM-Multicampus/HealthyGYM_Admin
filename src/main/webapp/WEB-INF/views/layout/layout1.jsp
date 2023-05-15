@@ -16,7 +16,7 @@
 <title>admin page</title>
 <style type="text/css">
 * {
-	font-family: "Nanum Gothic", cursive;
+	font-family: "Malgun Gothic", cursive;
 }
 
 
@@ -35,20 +35,20 @@ a:hover {
 
 .logo {
 	position: fixed;
-	background: #2E304D;
-	width: 150px;
+	background: #74b0d6;
+	width: 320px;
 	float: left;
-	height: 75px;
+	height: 90px;
 }
 
 .header {
 	color: white;
 	position: fixed;
-	height: 100px;
-	margin-left: 150px;
-	background: #2E304D;
-	height: 75px;
-	width: calc(100% - 150px);
+	height: 120px;
+	margin-left: 300px;
+	background: #74b0d6;
+	height: 90px;
+	width: calc(100% - 300px);
 }
 
 .menu {
@@ -69,7 +69,7 @@ a:hover {
 
 .float {
 	position: fixed;
-	margin-top: 100px;
+	margin-top: 120px;
 	width: 100vw;
 	height: 100vh;
 }
@@ -78,7 +78,9 @@ a:hover {
 <body>
 
 	<!-- header -->
-
+	<div class="logo">
+		<tiles:insertAttribute name="logo" />
+	</div>
 	<div class="header">
 		<tiles:insertAttribute name="header" />
 	</div>

@@ -20,7 +20,7 @@
 
 <style type="text/css">
 body{
-background-color: #2E304D;
+background-color: #74b0d6;
 }
 
 .divider:after, .divider:before {
@@ -34,11 +34,20 @@ background-color: #2E304D;
 	height: calc(100% - 60px);
 }
 
-@media ( max-width : 450px) {
+@media ( max-width : 720px) {
 	.h-custom {
 		height: 100%;
 	}
 }
+
+.logo {
+            width: 420x;
+            height: 240px;
+            background-image: src="./images/logout.png";
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+        }
 </style>
 
 </head>
@@ -53,11 +62,11 @@ background-color: #2E304D;
 					<form action="loginAf.do" method="post">
 						
 						<div class="divider d-flex align-items-center my-4">
-							<img alt="img" src="./images/logo.png?v=1" width="150px" height="150px">
+							<img alt="img" src="./images/logo.png?v=1" width="294px" height="69px">
 						</div>
 						
 						<div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-							<p style="margin: auto; font-size:larger "><b>HealthyGYM 관리자 페이지</b></p>
+							<p style="margin: auto; font-size:larger "><b>관리자 페이지</b></p>
 						</div>
 						<br>
 
@@ -72,7 +81,7 @@ background-color: #2E304D;
 						</div>
 
 						<div class="text-center text-lg-start mt-4 pt-2">
-							<button type="submit" class="btn btn-warning btn-block" style="padding-left: 2.5rem; padding-right: 2.5rem;">로그인</button>
+							<button type="submit" class="btn btn-warning btn-block" style="padding-left: 1.5rem; padding-right: 1.5rem; color: white;">로그인</button>
 							<p class="small fw-bold mt-2 pt-1 mb-0">
 								<a href="regi.do" class="link-danger"><b>관리자 계정 생성</b></a>
 							</p>

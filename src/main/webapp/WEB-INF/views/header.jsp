@@ -17,6 +17,17 @@
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
 
+<%
+MemberDto login = (MemberDto)session.getAttribute("login");
+if (login == null) {
+%>
+<script>
+	alert("로그인 세션이 만료되었습니다");
+</script>
+<%
+response.sendRedirect("login.do");
+}
+%>
 
 <style>
 img {
@@ -27,7 +38,7 @@ img {
 .box {
 	display: flex;
 	justify-content: flex-end;
-	padding-right: 30px;
+	padding-right: 80px;
 }
 
 pre {
@@ -39,10 +50,35 @@ pre {
 </style>
 
 
+<div class=box >
 
 
+	<div>
+		<pre>
+
+	<b>접속한 관리자
+	이메일 : <%=login.getEmail()%> 닉네임 : <%=login.getName()%> </b></pre>
+	</div>
+
+
+	<div id=logout>
+		<br> <img alt="img" src="./images/logout.png" width="30px;"
+			height="30px;">
+		<button type="button" id="logoutBtn" class="btn btn-outline-light">logout</button>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+	$(function() {
+		$("#logoutBtn").click(function() {
+			location.href = "sessionOut.do";
+		});
+	});
 	
 	
 	
 	
 </script>
+
