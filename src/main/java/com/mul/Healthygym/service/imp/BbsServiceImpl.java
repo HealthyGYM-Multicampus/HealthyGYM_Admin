@@ -30,4 +30,33 @@ public class BbsServiceImpl implements BbsService{
 		return count>0?true:false;
 	}
 	
+	@Override
+	public List<BbsDto> bbs2() {
+		return dao.bbs2();
+	}
+	@Override
+	public List<BbsDto> bbs3() {
+		return dao.bbs3();
+	}
+	@Override
+	public List<BbsDto> bbs4() {
+		return dao.bbs4();
+	}
+	@Override
+	public List<BbsDto> bbs11() {
+		return dao.bbs11();
+	}
+	@Override
+	public List<BbsDto> bbs5() {
+		return dao.bbs5();
+	}
+	@Override
+	public List<BbsDto> bbs10() {
+		return dao.bbs10();
+	}
+	
+	@Override
+	public List<BbsDto> bbsReport() {
+		return dao.bbsReport();
+	}
 }

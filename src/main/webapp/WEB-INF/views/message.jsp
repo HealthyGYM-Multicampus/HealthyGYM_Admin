@@ -54,6 +54,7 @@ if(login != null && !login.equals("")){
 }
 
 
+
 //사용	
 String go = (String)request.getAttribute("go");
 String modifyName = (String)request.getAttribute("modifyName");
@@ -74,6 +75,7 @@ if(modifyName != null && !modifyName.equals("")){
 	}
 }
 
+
 //사용	
 String modifyEmail = (String)request.getAttribute("modifyEmail");
 if(modifyEmail != null && !modifyEmail.equals("")){
@@ -93,24 +95,10 @@ if(modifyEmail != null && !modifyEmail.equals("")){
 	}
 }
 
-//사용	
-String modifyContact = (String)request.getAttribute("modifyContact");
-if(modifyContact != null && !modifyContact.equals("")){
-	if(modifyContact.equals("YES")){
-		%>
-		<script type="text/javascript">
-		alert("연락처가 성공적으로 수정되었습니다");
-		</script>
-		<%
-		response.sendRedirect(go+".do");		
-	} else{
-		%>
-		<script type="text/javascript">
-		alert("수정 실패");
-		</script>
-<%		response.sendRedirect(go+".do");
-	}
-}
+
+//사용
+//String modifyContact = (String)request.getAttribute("modifyContact");
+
 
 //사용	
 String modifyAuth = (String)request.getAttribute("modifyAuth");
@@ -133,126 +121,27 @@ if(modifyAuth != null && !modifyAuth.equals("")){
 
 
 /* ***** calendar ***** */
-String calWrite = (String)request.getAttribute("calWrite");
-if(calWrite != null && !calWrite.equals("")){
-	if(calWrite.equals("Cal_ADD_OK")){
-		%>
-		<script type="text/javascript">
-		alert("성공적으로 작성되었습니다");
-		location.href = "calendar.do";
-		</script>
-		<%
-	}
-	else{
-		%>
-		<script type="text/javascript">
-		alert("다시 작성해 주십시오");
-		location.href = "calwrite.do";
-		</script>
-		<%
-	}
-}
+//String calWrite = (String)request.getAttribute("calWrite");
 
-String calUpdate = (String)request.getAttribute("calupdate");
-if(calUpdate != null && !calUpdate.equals("")){
-	if(calUpdate.equals("Cal_UPDATE_OK")){
-		%>
-		<script type="text/javascript">
-		alert("성공적으로 수정되었습니다");
-		location.href = "calendar.do";
-		</script>
-		<%
-	}
-	else{
-		int seq = (Integer)request.getAttribute("seq");
-		%>
-		<script type="text/javascript">
-		alert("다시 작성해 주십시오");
-		let seq = "<%=seq %>";		
-		location.href = "calupdate.do?seq"+seq;
-		</script>
-		<%
-	}	
-}
-String calDelete = (String)request.getAttribute("caldelete");
-if(calDelete != null && !calDelete.equals("")){
-	if(calDelete.equals("Cal_DELETE_OK")){
-		%>
-		<script type="text/javascript">
-		alert("성공적으로 삭제되었습니다");
-		location.href = "calendar.do";
-		</script>
-		<%
-	}
-	else{
-		int seq = (Integer)request.getAttribute("seq");
-		%>			
-		<script type="text/javascript">
-		alert("삭제되지 않았습니다");
-		location.href = "caldelete.do?seq="+seq;
-		</script>
-		<%
-	}	
-}
+
+//String calUpdate = (String)request.getAttribute("calupdate");
+
+//String calDelete = (String)request.getAttribute("caldelete");
+
 
 
 /* ***** QNA ***** */
 //사용	
-String addAns = (String)request.getAttribute("addAns");
-if(addAns != null && !addAns.equals("")){
-	if(addAns.equals("YES")){
-		%>
-		<script type="text/javascript">
-		alert("답변이 추가되었습니다");
-		</script>
-		<%
-		response.sendRedirect(go+".do");		
-	} else{
-		%>
-		<script type="text/javascript">
-		alert("답변 실패");
-		</script>
-<%		response.sendRedirect(go+".do");
-	}
-}
+//String addAns = (String)request.getAttribute("addAns");
+
 
 /* ***** pps ***** */
 //사용	
-String delPps = (String)request.getAttribute("delPps");
-if(delPps != null && !delPps.equals("")){
-	if(delPps.equals("YES")){
-		%>
-		<script type="text/javascript">
-		alert("숨김처리 되었습니다");
-		</script>
-		<%
-		response.sendRedirect("pps.do");		
-	} else{
-		%>
-		<script type="text/javascript">
-		alert("실패");
-		</script>
-<%		response.sendRedirect("pps.do");
-	}
-}
+//String delPps = (String)request.getAttribute("delPps");
+
 //사용	
-String showPps = (String)request.getAttribute("showPps");
-if(showPps != null && !showPps.equals("")){
-	if(showPps.equals("YES")){
-		%>
-		<script type="text/javascript">
-		alert("숨김처리 되었습니다");
-		</script>
-		<%
-		response.sendRedirect("pps.do");		
-	} else{
-		%>
-		<script type="text/javascript">
-		alert("실패");
-		</script>
-<%		response.sendRedirect("pps.do");
-	}
-}
+//String showPps = (String)request.getAttribute("showPps");
+
 
 
 /* ***** bbs ***** */
@@ -293,44 +182,52 @@ if(showBbs != null && !showBbs.equals("")){
 	}
 }
 
+/* ***** bbs ***** */
+//사용	
+String delCmt = (String)request.getAttribute("delCmt");
+if(delCmt != null && !delCmt.equals("")){
+	if(delCmt.equals("YES")){
+		%>
+		<script type="text/javascript">
+		alert("숨김처리 되었습니다");
+		</script>
+		<%
+		response.sendRedirect("cmt.do");		
+	} else{
+		%>
+		<script type="text/javascript">
+		alert("실패");
+		</script>
+<%		response.sendRedirect("cmt.do");
+	}
+}
+//사용	
+String showCmt = (String)request.getAttribute("showCmt");
+if(showCmt != null && !showCmt.equals("")){
+	if(showCmt.equals("YES")){
+		%>
+		<script type="text/javascript">
+		alert("숨김처리 되었습니다");
+		</script>
+		<%
+		response.sendRedirect("cmt.do");		
+	} else{
+		%>
+		<script type="text/javascript">
+		alert("실패");
+		</script>
+<%		response.sendRedirect("cmt.do");
+	}
+}
+
 
 /* ***** nbs ***** */
 //사용	
-String delNbs = (String)request.getAttribute("delNbs");
-if(delNbs != null && !delNbs.equals("")){
-	if(delNbs.equals("YES")){
-		%>
-		<script type="text/javascript">
-		alert("숨김처리 되었습니다");
-		</script>
-		<%
-		response.sendRedirect("nbs.do");		
-	} else{
-		%>
-		<script type="text/javascript">
-		alert("실패");
-		</script>
-<%		response.sendRedirect("nbs.do");
-	}
-}
+//String delNbs = (String)request.getAttribute("delNbs");
+
 //사용	
-String showNbs = (String)request.getAttribute("showNbs");
-if(showNbs != null && !showNbs.equals("")){
-	if(showNbs.equals("YES")){
-		%>
-		<script type="text/javascript">
-		alert("숨김처리 되었습니다");
-		</script>
-		<%
-		response.sendRedirect("nbs.do");		
-	} else{
-		%>
-		<script type="text/javascript">
-		alert("실패");
-		</script>
-<%		response.sendRedirect("nbs.do");
-	}
-}
+//String showNbs = (String)request.getAttribute("showNbs");
+
 
 
 %>

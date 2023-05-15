@@ -118,7 +118,7 @@ String title = (String)request.getAttribute("title");
 				<th>닉네임</th>
 				<th>이메일</th>
 				<th>관리자 권한</th>
-				<th>유저 상태</th>
+				<th>로그인 환경</th>
 				<th>수정</th>
 				<th>상태변경</th>
 			</tr>
@@ -128,7 +128,7 @@ String title = (String)request.getAttribute("title");
 			<%
 			if(list.isEmpty()){ %>
 			<tr>
-			<td colspan="8"> 게시글이 없습니다</td>
+			<td colspan="8"> 유저가 없습니다</td>
 			</tr>
 			<%	
 			}else{
@@ -150,8 +150,8 @@ String title = (String)request.getAttribute("title");
 				%> 일반회원 <%
 				} else if (dto.getAuth() == 0) {
 				%> 관리자 <%
-				}else if (dto.getAuth() == 3) {
-				%><span style="color: red">활동정지</span> <%
+				}else if (dto.getAuth() == 2) {
+				%><span style="color: red">정지회원</span> <%
 				}
 				%>
 
@@ -175,19 +175,19 @@ String title = (String)request.getAttribute("title");
 				<article>
 				<br>
 				<h1>회원정보 수정</h1>
-				<h2>아이디 : <%= dto.getId() %> 님</h2>
+				<h2>아이디 : <%= dto.getName() %> 님</h2>
 							
 				<br>
 				
 				<form action= "modifyName.do" method="post">
 				<input type="hidden" name=id value="<%= dto.getId() %>">				
 				<input type="hidden" name=go value="<%= go %>">				
-				이름 변경 : <input type="text" id=name<%= s %> name=name placeholder="변경할 이름"> 
+				닉네임 변경 : <input type="text" id=name<%= s %> name=name placeholder="변경할 닉네임"> 
 				<button type="submit" id=nameBtn<%= s %> class="btn btn-success btn-sm">변경</button>
 				</form>		
 			
 				<form action= "modifyEmail.do" method="post">
-				<input type="hidden" name=id value="<%= dto.getId() %>">
+				<input type="hidden" name=id value="<%= dto.getId() %>">	
 				<input type="hidden" name=go value="<%= go %>">			
 				<br> email 변경 : <input type="email" id=email<%= s %> name=email placeholder="변경할 email">
 				<button type="submit" id=emailBtn<%= s %>  class="btn btn-success btn-sm">변경</button>
@@ -202,13 +202,13 @@ String title = (String)request.getAttribute("title");
 				<article>
 					<br>
 					<h1>회원 상태 변경</h1>
-					<h3>아이디 :<%=dto.getId()%> 님</h3>
+					<h3>닉네임 :<%=dto.getId()%> 님</h3>
 					<h2>현재 상태 :<%
 						if (dto.getAuth() == 1) {
 						%> 일반회원 <%
 						} else if (dto.getAuth() == 0) {
 						%> 관리자 <%
-						}else if (dto.getAuth() == 3) {
+						}else if (dto.getAuth() == 2) {
 						%> 활동중지 <%
 						}
 						%></h2>
@@ -219,8 +219,8 @@ String title = (String)request.getAttribute("title");
 				<input type="hidden" name=id value="<%= dto.getId() %>">
 					<select name=auth>
 					    <option value=0>관리자</option>
-					    <option value=2>일반회원</option>
-					    <option value=3>활동정지</option>
+					    <option value=1>일반회원</option>
+					    <option value=2>활동정지</option>
 					</select>	
 					<button type="submit" id=authBtn<%= s %> class="btn btn-success btn-sm">변경</button>
 					<br>
@@ -273,10 +273,10 @@ String title = (String)request.getAttribute("title");
 
 
 
-
+ <!--
 	<script type="text/javascript">
 
- <!--
+
 	//전화번호에 하이픈 자동으로 넣는 함수
 		function chk_tel(str, id) {
 			str = str.replace(/[^0-9]/g, '');
@@ -332,7 +332,8 @@ String title = (String)request.getAttribute("title");
 		}
 
 	
-	-->
+
 	
 	</script>
+		-->
 </body>

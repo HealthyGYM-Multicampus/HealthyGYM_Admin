@@ -30,6 +30,41 @@ public class BbsDaoImpl implements BbsDao{
 	public int showBbs(BbsDto dto) {
 		return session.update(ns + "showBbs", dto);
 	}
+	
+	@Override
+	public List<BbsDto> bbs2() {
+		return session.selectList(ns + "bbs2");
+	}
+	
+	@Override
+	public List<BbsDto> bbs3() {
+		return session.selectList(ns + "bbs3");
+	}
+	
+	@Override
+	public List<BbsDto> bbs4() {
+		return session.selectList(ns + "bbs4");
+	}
+	
+	@Override
+	public List<BbsDto> bbs11() {
+		return session.selectList(ns + "bbs11");
+	}
+	
+	@Override
+	public List<BbsDto> bbs5() {
+		return session.selectList(ns + "bbs5");
+	}
+	
+	@Override
+	public List<BbsDto> bbs10() {
+		return session.selectList(ns + "bbs10");
+	}
+	
+	@Override
+	public List<BbsDto> bbsReport() {
+		return session.selectList(ns + "bbsReport");
+	}
 
 
 

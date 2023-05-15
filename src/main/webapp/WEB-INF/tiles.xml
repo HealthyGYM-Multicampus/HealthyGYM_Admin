@@ -12,11 +12,11 @@
 	</definition>
 	
 	
-	
+	<!-- 
 	<definition name="calendar" extends="main">
  		<put-attribute name="content" value="/WEB-INF/views/calendar/calendar.jsp" />
 	</definition>
-
+ -->
 
 	<definition name="members" extends="main">
 		<put-attribute name="content" value="/WEB-INF/views/main/members.jsp" />
@@ -35,11 +35,42 @@
 	</definition>
 	
 	
-	<!--  -->
-	
-	
+	<!-- 게시판 전체 / 바디 / 정보 / 자유 / 식단추천 -->
 	<definition name="bbs"  extends="main">
 		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+		<definition name="bbs2"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+		<definition name="bbs3"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+		<definition name="bbs4"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+		<definition name="bbs11"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+	<!-- 헬친 -->
+	<definition name="bbs5"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+	<definition name="bbs10"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbs.jsp" />
+	</definition>
+	
+	<definition name="bbsReport"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/bbsreport.jsp" />
+	</definition>
+	
+		<definition name="cmt"  extends="main">
+		<put-attribute name="content" value="/WEB-INF/views//pps/cmt.jsp" />
 	</definition>
 	
 

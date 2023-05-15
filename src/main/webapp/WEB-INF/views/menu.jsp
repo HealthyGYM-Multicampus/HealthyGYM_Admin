@@ -21,11 +21,6 @@
 	  <div class="container">
       <div class="row">
         <div class="col-12">
-     
-          <div class="list-group">
-            <a href="bbs.do" class="list-group-item list-group-item-action">자유게시판 관리</a>              
-          </div>
-        
 
           <div class="list-group">
             <a href="members.do" class="list-group-item list-group-item-action  list-group-item-info">전체회원</a>
@@ -33,7 +28,24 @@
             <a href="BanMems.do" class="list-group-item list-group-item-action">활동정지회원</a>
             <a href="Managers.do" class="list-group-item list-group-item-action">관리자</a>
           </div>
+          
+          <div class="list-group">
+            <a href="bbs.do" class="list-group-item list-group-item-action  list-group-item-info">전체 게시글 조회</a>    
+            <a href="bbs2.do" class="list-group-item list-group-item-action">바디갤러리</a>  
+            <a href="bbs3.do" class="list-group-item list-group-item-action">정보게시판</a>  
+            <a href="bbs4.do" class="list-group-item list-group-item-action">자유게시판</a>       
+            <a href="bbs11.do" class="list-group-item list-group-item-action">식단게시판</a>       
+          </div>
      
+     <div class="list-group">
+            <a href="bbs5.do" class="list-group-item list-group-item-action">운동메이트</a>    
+            <a href="bbs10.do" class="list-group-item list-group-item-action">식단메이트</a>        
+          </div>
+          
+          <div class="list-group">
+            <a href="bbsReport.do" class="list-group-item list-group-item-action  list-group-item-info">신고된 게시글</a>     
+            <a href="cmt.do" class="list-group-item list-group-item-action  list-group-item-info">댓글 조회</a>         
+          </div>
   
         </div>
       </div>

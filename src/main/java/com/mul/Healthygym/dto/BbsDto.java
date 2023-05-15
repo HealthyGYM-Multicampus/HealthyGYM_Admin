@@ -16,9 +16,11 @@ public class BbsDto implements Serializable {
 	    private int ref;
 	    private String nickname;
 	    
+	    private int report;
+	    
 	    public BbsDto() {}
 
-		public BbsDto(int bbsseq, int memberseq, String title, String content, String wdate, int del, int ref, String nickname) {
+		public BbsDto(int bbsseq, int memberseq, String title, String content, String wdate, int del, int ref, String nickname, int report) {
 			super();
 			this.bbsseq = bbsseq;
 			this.memberseq = memberseq;
@@ -30,6 +32,8 @@ public class BbsDto implements Serializable {
 			this.ref = ref;
 			
 			this.nickname = nickname;
+			
+			this.report = report;
 		}
 
 		public int getSeq() {
@@ -96,12 +100,20 @@ public class BbsDto implements Serializable {
 		public void setName(String nickname) {
 			this.nickname = nickname;
 		}
+		
+		public int getReport() {
+			return report;
+		}
+
+		public void setReport(int report) {
+			this.report = report;
+		}
 
 
 		@Override
 		public String toString() {
 			return "BbsDto [bbsseq=" + bbsseq + ", memberseq=" + memberseq + ", title=" + title + ", content=" + content + ", del=" + del + ", "
-					+ "ref=" + ref + ", nickname=" + nickname + "]";
+					+ "ref=" + ref + ", nickname=" + nickname + ", report=" + report + "]";
 		}
 	    
 	    

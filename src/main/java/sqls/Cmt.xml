@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	
+<mapper namespace="Cmt">
+	
+<!--  최신순 리스트 -->
+	<select id="cmtList" resultType="com.mul.Healthygym.dto.CmtDto">
+		select c.commentseq, c.bbsseq, c.memberseq, c.cmtcontent, c.regdate, c.cmtdel, m.nickname
+		from bbs_comment as c
+		join member as m
+		on m.memberseq=c.memberseq
+		order by regdate asc
+	</select>
+	
+<!-- 숨김 처리 -->	
+	<update id="delCmt" parameterType="com.mul.Healthygym.dto.CmtDto">
+	update bbs_comment set cmtdel=1 where commentseq=#{commentseq}
+	</update>
+	
+<!--  노출 처리 -->	
+	<update id="showCmt" parameterType="com.mul.Healthygym.dto.CmtDto">
+	update bbs_comment set cmtdel=0 where commentseq=#{commentseq}
+	</update>
+
+</mapper>
+
+
+
+
+
+
+

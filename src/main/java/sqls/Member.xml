@@ -12,13 +12,13 @@
 	<select id="NomalMems" resultType="com.mul.Healthygym.dto.MemberDto">
 		select memberseq, nickname, email, authority, auth
 		from member
-		where auth=2
+		where auth=1
 		order by memberseq asc
 	</select>
 	<select id="BanMems" resultType="com.mul.Healthygym.dto.MemberDto">
 		select memberseq, nickname, email, authority, auth
 		from member
-		where auth=3
+		where auth=2
 		order by memberseq asc
 	</select>
 	<select id="Managers" resultType="com.mul.Healthygym.dto.MemberDto">
@@ -46,18 +46,22 @@
 	</select>
 	
 	<update id="modifyName"  parameterType="com.mul.Healthygym.dto.MemberDto">
-		update member set nickname=#{nickname} where memberseq=#{memberseq}
+		update member
+		set nickname=#{nickname}
+		where memberseq=#{memberseq}
 	</update>
 	
-	
 	<update id="modifyEmail"  parameterType="com.mul.Healthygym.dto.MemberDto">
-		update member set email=#{email} where memberseq=#{memberseq}
+		update member
+		set email=#{email}
+		where memberseq=#{memberseq}
 	</update>
 	
 	<update id="modifyAuth"  parameterType="com.mul.Healthygym.dto.MemberDto">
-		update member set auth=#{auth} where memberseq=#{memberseq}
+		update member
+		set auth=#{auth}
+		where memberseq=#{memberseq}
 	</update>
-	
 	
 	
 </mapper>

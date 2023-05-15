@@ -1,5 +1,6 @@
 <%@page import="com.mul.Healthygym.dto.BbsDto"%>
 <%@page import="com.mul.Healthygym.dto.MemberDto"%>
+<%@page import="com.mul.Healthygym.dto.CmtDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -99,7 +100,7 @@ option[value=""][disabled] {
 <body>
 
 	<%
-List<BbsDto> list = (List<BbsDto>) request.getAttribute("bbs");
+List<CmtDto> list = (List<CmtDto>) request.getAttribute("cmt");
 String type = (String)request.getAttribute("type");
 String go = (String)request.getAttribute("go");
 	
@@ -111,20 +112,14 @@ String go = (String)request.getAttribute("go");
 		<table id="ListTable" class="table table-hover">
 			<col width="10%">
 			<col width="10%">
+			<col width="60%">
 			<col width="20%">
-			<col width="20%">
-			<col width="10%">
-			<col width="10%">
-			<col width="15%">
 	
 			<tr>
 				<th>회원번호</th>
 				<th>닉네임</th>
-				<th>제목</th>
+				<th>내용</th>
 				<th>작성일</th>
-				<th>숨김 및 조회</th>
-				<th>노출처리</th>
-				<th>노출상태</th>
 				
 			
 			
@@ -143,16 +138,17 @@ String go = (String)request.getAttribute("go");
 
 		for (int i = 0; i < list.size(); i++) {
 	
-			BbsDto dto = list.get(i);
+			CmtDto dto = list.get(i);
 			String s = Integer.toString(i);
 			int id = dto.getId();
 		%>
 			<tr>
 				<td><b><%=dto.getId()%></b></td>
 				<td><%=dto.getName()%></td>
-				<td><%=dto.getTitle()%></td>
+				<td><%=dto.getCmtcontent()%></td>
 				<td><%=dto.getRegdate()%></td>
 			
+			<!-- 
 				<td>
 					<button class="btn btn-danger btn-sm" id=ppsUpdate<%= s %> >숨김 및 조회</button>
 				</td>
@@ -162,13 +158,15 @@ String go = (String)request.getAttribute("go");
 				</td>
 			
 			
-			<% if(dto.getDel() == 0){ %>
+			<% if(dto.getCmtdel() == 0){ %>
 				<td><span style="color: blue">정상노출</span></td>
 				<%}else{ %>
 				<td><span style="color: red">숨김처리</span></td>
 				<%} %>	
 </tr>
-			
+			 -->
+			 
+			 <!-- 
 			<div class=popUpdate id=popUpdate<%= s %>>
 				<article>
 				<br>
@@ -176,10 +174,10 @@ String go = (String)request.getAttribute("go");
 				<h4>아이디 : <%= dto.getId() %> 님</h4>						
 				<br>
 			<textarea style="width:90%; height:110px; resize: none;" readonly="readonly">
-				<%= dto.getContent() %>
+				<%= dto.getCmtcontent() %>
 		</textarea>
-					<form action="delBbs.do" method="post" id=frm<%= s %>>
-						<input type="hidden" name=seq value="<%=dto.getSeq()%>"> 				
+					<form action="delCmt.do" method="post" id=frm<%= s %>>
+						<input type="hidden" name=seq value="<%=dto.getCommentseq()%>"> 				
 						<br>
 						<button type="submit" id=Btn<%=s%>
 							class="btn btn-success btn-sm">페이지에서 숨김처리하기</button>
@@ -190,7 +188,7 @@ String go = (String)request.getAttribute("go");
 					<button class="btn btn-secondary btn-sm" id=popclose1<%= s %> >창닫기</button>
 				</article>
 			</div>	
-		
+		 
 				<script type="text/javascript">
 				
 			
@@ -216,10 +214,10 @@ String go = (String)request.getAttribute("go");
 				<h4>아이디 : <%= dto.getId() %> 님</h4>						
 				<br>
 			<textarea style="width:90%; height:110px; resize: none;" readonly="readonly">
-				<%= dto.getContent() %>
+				<%= dto.getCmtcontent() %>
 		</textarea>
-					<form action="showBbs.do" method="post" id=frm<%= s %>>
-						<input type="hidden" name=seq value="<%=dto.getSeq()%>"> 				
+					<form action="showCmt.do" method="post" id=frm<%= s %>>
+						<input type="hidden" name=seq value="<%=dto.getCommentseq()%>"> 				
 						<br>
 						<button type="submit" id=Btn2<%=s%>
 							class="btn btn-success btn-sm">페이지에서 노출처리하기</button>
@@ -247,7 +245,7 @@ String go = (String)request.getAttribute("go");
 
 				
 			</script>
-							
+							-->
 		
 
 			<%

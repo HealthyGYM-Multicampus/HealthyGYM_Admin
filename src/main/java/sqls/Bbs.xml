@@ -24,6 +24,67 @@
 	update bbs set del=0 where bbsseq=#{bbsseq}
 	</update>
 	
+	
+	<!-- 게시판 뿌리기 -->
+	<select id="bbs2" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where bbstag=2
+		order by wdate asc
+	</select>
+	<select id="bbs3" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where bbstag=3
+		order by wdate asc
+	</select>
+	<select id="bbs4" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where bbstag=4
+		order by wdate asc
+	</select>
+	<select id="bbs11" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where bbstag=11
+		order by wdate asc
+	</select>
+	
+	<select id="bbs5" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where bbstag=5
+		order by wdate asc
+	</select>
+	
+	<select id="bbs10" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where bbstag=10
+		order by wdate asc
+	</select>
+	
+	<select id="bbsReport" resultType="com.mul.Healthygym.dto.BbsDto">
+		select b.bbsseq, b.memberseq, b.title, b.content, b.wdate, b.del, m.nickname
+		from bbs as b
+		join member as m
+		on b.memberseq=m.memberseq
+		where report=1
+		order by wdate asc
+	</select>
 
 </mapper>
 
